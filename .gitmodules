@@ -3,11 +3,15 @@
 	url = https://github.com/NOAA-SWPC/WAM.git
 [submodule "IPE"]
 	path = IPE
-	url = https://github.com/NOAA-SWPC/IPE.git
+  #url = https://github.com/NOAA-SWPC/IPE.git
+	url = https://github.com/BrianCurtis-NOAA/IPE.git
+  branch = highres1
 [submodule "NEMS"]
 	path = NEMS
-	url = https://github.com/NOAA-SWPC/NEMS.git
-	branch = develop
+  #url = https://github.com/NOAA-SWPC/NEMS.git
+	url = https://github.com/BrianCurtis-NOAA/NEMS.git
+  #branch = develop
+	branch = highres1
 [submodule "SWIO"]
 	path = SWIO
 	url = https://github.com/NOAA-SWPC/SWIO.git
