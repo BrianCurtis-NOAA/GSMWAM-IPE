@@ -16,7 +16,7 @@ export BASEDIR=${BASEDIR:-`pwd`/../..} # folder containing IPELIB, NEMS, etc.
 . $CONFIGDIR/$FMID.config
 
 # load non-machine-specific general configuration: dependent directories, executables, etc.
-. $CONFIGDIR/general.config
+. $CONFIGDIR/general_highres.config
 
 # load computational logic
 . $CONFIGDIR/compute.config
@@ -39,13 +39,13 @@ if [ $IPE = .true. ] ; then
 # load IPE-specific configuration
 . $CONFIGDIR/ipe.config
 
-if [ $WAM_IPE_COUPLING = .true. ] ; then
-# load the coupled configuration
-. $CONFIGDIR/coupled.config
+    if [ $WAM_IPE_COUPLING = .true. ] ; then
+    # load the coupled configuration
+    . $CONFIGDIR/coupled.config
 
-# load the namelist options
-. $CONFIGDIR/wam-ipe_dpnamelist.config
-fi
+    # load the namelist options
+    . $CONFIGDIR/wam-ipe_dpnamelist.config
+    fi
 
 else # standalone
 . $CONFIGDIR/wam_dpnamelist.config
