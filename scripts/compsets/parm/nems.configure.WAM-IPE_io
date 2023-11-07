@@ -41,20 +41,36 @@ IO_attributes::
   ConfigFile = swio.ipe.rc
 ::
 # Run Sequence #
+#runSeq::
+#  @${IO_CADENCE}
+#    @$coupling_interval_slow_sec
+#      ATM -> MED :remapMethod=redist
+#      MED
+#      MED -> IPM :remapMethod=redist
+#      @$coupling_interval_fast_sec
+#        ATM
+#      @
+#      IPM
+#    @
+#    AIO
+#    ATM -> AIO
+#    IO
+#    IPM -> IO
+#  @
+
 runSeq::
-  @${IO_CADENCE}
-    @$coupling_interval_slow_sec
-      ATM -> MED :remapMethod=redist
-      MED
-      MED -> IPM :remapMethod=redist
-      @$coupling_interval_fast_sec
-        ATM
-      @
-      IPM
+  @$coupling_interval_slow_sec
+    ATM -> MED :remapMethod=redist
+    MED
+    MED -> IPM :remapMethod=redist
+    @$coupling_interval_fast_sec
+      ATM
     @
+    IPM
     AIO
     ATM -> AIO
     IO
     IPM -> IO
   @
+::
 ::
